@@ -1,7 +1,6 @@
 //get our buttons from the DOM
 const buttons = document.querySelectorAll('.btn-number, .btn-operator');
 const clearButton = document.querySelector('.btn-clear');
-// const equalsButton = document.querySelector('.btn-operator .btn-equals');
 const saveButton = document.querySelector('.btn-save');
 const display = document.querySelector('.display');
 const history = document.querySelector('.history');
@@ -10,6 +9,18 @@ const input = document.querySelector('.input');
 function formatNumber(num) {
   console.log('Hello');
   return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+}
+
+function equal() {
+  let answer = eval(history.textContent);
+  input.textContent = formatNumber(answer);
+  console.log(history.textContent);
+  console.log(input.textContent);
+}
+
+function allClear() {
+  input.textContent = '';
+  history.textContent = '';
 }
 
 //add an eventListener to each of the buttons
@@ -21,17 +32,6 @@ buttons.forEach((button) => {
     console.log(history.textContent);
   });
 });
-
-// equalsButton.addEventListener('click', () => {
-//   input.textContent = eval(history.textContent);
-//   console.log(history.textContent);
-//   console.log(input.textContent);
-// });
-
-// clearButton.addEventListener('click', () => {
-//   input.textContent = '';
-//   history.textContent = '';
-// });
 
 saveButton.addEventListener('click', () => {
   $(document).ready(function () {
@@ -48,15 +48,3 @@ saveButton.addEventListener('click', () => {
     });
   });
 });
-
-function equal() {
-  let answer = eval(history.textContent);
-  input.textContent = formatNumber(answer);
-  console.log(history.textContent);
-  console.log(input.textContent);
-}
-
-function allClear() {
-  input.textContent = '';
-  history.textContent = '';
-}

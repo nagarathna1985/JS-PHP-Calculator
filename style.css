@@ -34,6 +34,7 @@
 .btn-wrapper {
   display: flex;
   width: 75%;
+  background-color: #ec475c;
 }
 
 button {
@@ -51,20 +52,4 @@ button {
 
 .btn-operator {
   background-color: #f7ba86;
-}
-
-.btn-equals {
-  background-color: #f7ba86;
-}
-
-.btn-clear {
-  background-color: #ec475c;
-}
-
-.btn-save {
-  background-color: #ec475c;
-}
-
-button:focus {
-  outline: none;
 }
