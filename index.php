@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport"
 				content="width=device-width, initial-scale=1.0">
-	<title>Change the title</title>
+	<title>Manage Calculator history </title>
 	<link href="style.css"
 				rel="stylesheet">
 				<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
@@ -63,7 +63,7 @@
 	</main>
 
 	<?php
-        if(array_key_exists('button1', $_POST)) { 
+       /* if(array_key_exists('button1', $_POST)) { 
             button1(); 
         } 
         else if(array_key_exists('button2', $_POST)) { 
@@ -89,20 +89,22 @@
             fclose($fp);
 						return $IP;
 	
-        } 
+        } */
     ?> 
 		
   
-    <form method="post"> 
+   <!-- <form method="post"> 
         <input type="submit" name="button1"
                 class="button" value="Button1" /> 
           
         <input type="submit" name="button2"
                 class="button" value="Button2" /> 
-    </form> 
+    </form> -->
 
 </body>
 
-<div id="hide-history"></div>
+<div id="hide-history">
+
+</div>
 
 </html>

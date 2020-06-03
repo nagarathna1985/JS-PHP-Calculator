@@ -48,14 +48,8 @@ saveButton.addEventListener('click', () => {
       data: {history_data:history_data, output:output},
 	  success: function (response) {
 				alert(response);
-				/*if(response != ''){ 
-					alert("User Deleted Successfully");
-					window.location.href= 'http://localhost/task/';
-					
-				}else{
-					alert("Problem in Delete User.");
-				}
-				*/
+				$('#hide-history').html(response);
+				
             }
     });
   });
