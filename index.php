@@ -23,7 +23,7 @@
 
 		<section class="buttons">
 		<article class="btn-wrapper">
-			<button class="btn-clear" onclick="allClear()">AC</button>
+			<button class="btn-clear" onClick="allClear()">AC</button>
 			<button class="btn-save">SAVE</button>
 		</article>
 			<button class="btn-operator"
@@ -58,39 +58,11 @@
 			<button class="btn-number"
 							data-num="9">9</button>
 			<button class="btn-operator"
-							data-num="=" onclick="equal()">=</button>
+							data-num="=" onClick="equal()">=</button>
 		</section>
 	</main>
 
-	<?php
-        if(array_key_exists('button1', $_POST)) { 
-            button1(); 
-        } 
-        else if(array_key_exists('button2', $_POST)) { 
-						button2(); 
-						
-        } 
-        function button1() { 
-            echo "This is Button1 that is selected"; 
-        } 
-        function button2() { 
-						echo "This is Button2 that is selected"; 
-						$IP = $_SERVER['REMOTE_ADDR'];
-						// $date = date('Format String');
-						$browser = get_browser(null, true);
-						print_r($browser);
-						$date = date("d-m-Y");
-
-							echo "IP is $IP";
-							$fp = fopen("file.csv", 'w');
-
-            fputcsv($fp,array($IP,$browser,$date, $display));
-
-            fclose($fp);
-						return $IP;
 	
-        } 
-    ?> 
 		
   
     <form method="post"> 
