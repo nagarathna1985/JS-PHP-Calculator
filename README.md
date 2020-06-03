@@ -8,7 +8,7 @@ Basically when clicked on the SAVE button it should save the calculation history
 
 Then convert the data in CSV file into an array to display as a table in a new page called calculations.php
 
-To run the project:
+# To run the project:
 
 - git clone the repo.
 
@@ -17,6 +17,6 @@ To run the project:
 - Start the PHP server and go the specified localhost.
   example: If the server is running in the port 9999 the go to http://localhost:9999/www/index.php to serve the index page.
 
-Task to do:
+# Task to do:
 
 PHP bit needs to be completed.
