@@ -33,6 +33,8 @@ buttons.forEach((button) => {
   });
 });
 
+//the below code is to post the history to the csv file which is not working
+
 saveButton.addEventListener('click', () => {
   $(document).ready(function () {
     //your code here
@@ -41,10 +43,7 @@ saveButton.addEventListener('click', () => {
     $.ajax({
       url: 'file.csv',
       method: 'post',
-      data: { display: display.textContent },
-      // success: function (res) {
-      //   console.log(res);
-      // },
+      data: display.textContent,
     });
   });
 });
