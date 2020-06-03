@@ -38,12 +38,25 @@ buttons.forEach((button) => {
 saveButton.addEventListener('click', () => {
   $(document).ready(function () {
     //your code here
-    console.log('Im clicked');
-    console.log(display.textContent);
-    $.ajax({
-      url: 'file.csv',
-      method: 'post',
-      data: display.textContent,
+  // alert('Im clicked');
+  
+   var history_data = $('.history').html();
+   var output = $('.input').html();
+   $.ajax({
+      url: 'Calculations.php',
+      type: 'post',
+      data: {history_data:history_data, output:output},
+	  success: function (response) {
+				alert(response);
+				/*if(response != ''){ 
+					alert("User Deleted Successfully");
+					window.location.href= 'http://localhost/task/';
+					
+				}else{
+					alert("Problem in Delete User.");
+				}
+				*/
+            }
     });
   });
 });
