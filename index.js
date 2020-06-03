@@ -47,7 +47,7 @@ saveButton.addEventListener('click', () => {
       type: 'post',
       data: {history_data:history_data, output:output},
 	  success: function (response) {
-				alert(response);
+				//alert(response);
 				$('#hide-history').html(response);
 				
             }

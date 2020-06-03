@@ -10,35 +10,42 @@
 	{
 	$no_rows = ($no_rows - 1) + 1;
 	}
+	
     if(fputcsv($file_open,$form_data ))
 	{
-		$output = '';
-		$output .= '<table><thead>
+	
+	$data = loadCSV('file.csv');
+	$output = '';
+	$output .= '<table><thead>
                     	<tr>
 						<th>DATA</th>
                         <th>IP</th>
 						<th>DATE</th>
 						<th>BROWSER</th>
 						</tr></thead><tbody>'; 
-		$f_pointer = fopen("file.csv","r");
-		while(! feof($f_pointer)){
-		$ar=fgetcsv($f_pointer);
-		//print_r($ar); 
-		
-				
+	foreach ($data as $ar ){
 			$output .= '<tr>
 						<td>'.$ar[0].'</td>
 						<td>'.$ar[1].'</td>
 						<td>'.$ar[2].'</td>
 						<td>'.$ar[3].'</td> </tr>';
-					//	echo $output;
-				}
-				$output .= '</tbody></table>';
-		echo $output;
-		//fclose($f_pointer);
+			}
+	echo $output;
 	}else {
-		echo "error";
+		echo "error, Plase close the file";
 	}
-	
+function loadCSV($file) {
+    $rows = array();
+
+    if (($handle = fopen($file, "r")) !== FALSE) {
+
+        while (($data = fgetcsv($handle, 0, ",")) !== FALSE) {
+            array_push($rows, $data);
+        }
+        fclose($handle);
+    }
+
+    return array_reverse($rows);
+}
 
 ?>
